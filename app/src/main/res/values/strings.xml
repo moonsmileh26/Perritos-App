@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Perritos</string>
+    <string name="pet_name">Taco</string>
+    <string name="pet_image">Pet Image</string>
 </resources>
