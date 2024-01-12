@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">Perritos</string>
+    <string name="pet_name">Taco</string>
+    <string name="pet_image">Pet Image</string>
+    <string name="response_request_error">Error getting dogs</string>
 </resources>
