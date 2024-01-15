@@ -1,4 +1,4 @@
-package mx.com.moonsmileh.perritos
+package mx.com.moonsmileh.perritos.ui
 
 import android.os.Bundle
 import android.view.View
@@ -11,9 +11,12 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.recyclerview.widget.GridLayoutManager
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
+import mx.com.moonsmileh.perritos.R
 import mx.com.moonsmileh.perritos.databinding.ActivityMainBinding
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity(), SearchView.OnQueryTextListener {
 
     private lateinit var binding: ActivityMainBinding

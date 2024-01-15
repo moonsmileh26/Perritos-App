@@ -1,4 +1,4 @@
-package mx.com.moonsmileh.perritos.network
+package mx.com.moonsmileh.perritos.data.network
 
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor

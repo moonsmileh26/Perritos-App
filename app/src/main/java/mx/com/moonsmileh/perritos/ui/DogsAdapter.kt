@@ -1,8 +1,10 @@
-package mx.com.moonsmileh.perritos
+package mx.com.moonsmileh.perritos.ui
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import mx.com.moonsmileh.perritos.DogsViewHolder
+import mx.com.moonsmileh.perritos.R
 
 class DogsAdapter(var dogs: List<String>) : RecyclerView.Adapter<DogsViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DogsViewHolder {
