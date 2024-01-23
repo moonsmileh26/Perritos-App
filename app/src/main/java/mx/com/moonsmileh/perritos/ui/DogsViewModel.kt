@@ -9,12 +9,14 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import mx.com.moonsmileh.perritos.data.response.ResponseError
+import mx.com.moonsmileh.perritos.data.response.ResponseFailure
 import mx.com.moonsmileh.perritos.domain.usecase.GetDogsUseCase
 import javax.inject.Inject
 
 
 open class UiState {
     data class Success(val dogs: List<String>) : UiState()
+    data class Failure(val error: kotlin.Error) : UiState()
     data class Loading(val isLoading: Boolean) : UiState()
     data class Error(val exception: Throwable) : UiState()
 }
@@ -34,7 +36,11 @@ class DogsViewModel @Inject constructor(private val getDogsUseCase: GetDogsUseCa
             }
             if (result != null) {
                 val dogs = getDogsUseCase.invoke(query)?.images ?: emptyList()
-                _dogsState.value = UiState.Success(dogs)
+                if (dogs.isEmpty()) {
+                    _dogsState.value = UiState.Failure(ResponseFailure())
+                } else {
+                    _dogsState.value = UiState.Success(dogs)
+                }
             } else {
                 _dogsState.value = UiState.Error(ResponseError())
             }
